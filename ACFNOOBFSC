@@ -1,0 +1,688 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Anime Clicker Fight", "DarkTheme")
+
+-- farm tab start here
+
+local FarmTab = Window:NewTab("Farm")
+
+local ClickSection = FarmTab:NewSection("Useful")
+
+ClickSection:NewToggle("Auto Click", " ", function(state)
+    if state then
+        getgenv().autoClick = true
+        spawn(function()
+            while autoClick do task.wait()
+
+game:GetService("ReplicatedStorage").System.SystemClick.Click:FireServer()
+            end
+        end)
+    else
+        getgenv().autoClick = false
+    end
+end)
+
+ClickSection:NewToggle("Auto Daily Spin", "Automatically daily spin.", function(state)
+    if state then
+        getgenv().autodailySpin = true
+        spawn (function()
+            while autodailySpin do task.wait(0.1)
+game:GetService("ReplicatedStorage").System.SystemDailyLottery.Spin:InvokeServer()
+            end
+        end)
+    else
+       getgenv().autodailySpin = false
+    end
+end)
+--auto farms start here 
+
+local AutoSection = FarmTab:NewSection("Auto Farms")
+AutoSection:NewToggle("Auto Farm Naruto", " ", function(state)
+    if state then
+        getgenv().autoClick = true
+        wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-25, 3, -336)
+        wait(0.1)
+        getgenv().autoNarutoSec = true
+        spawn(function()
+            while autoNarutoSec do task.wait()
+                local teleport_table = {
+                    location1 = Vector3.new(9553, 3, -338) -- location
+                }
+                
+                local tween_s = game:GetService('TweenService')
+                local tweeninfo = TweenInfo.new(0.5, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+                
+                local lp =  game.Players.LocalPlayer
+                
+                function bypass_teleport(v)
+                    if lp.Character and   
+                    lp.Character:FindFirstChild('HumanoidRootPart') then    
+                
+                        local cf = CFrame.new(v)
+                        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+                
+                         a:Play()
+                    end
+                end 
+                
+                bypass_teleport(teleport_table.location1)
+
+            end
+        end)    
+    else
+        getgenv().autoClick = false
+        wait(0.1)
+        getgenv().autoNarutoSec = false
+    end
+end)
+
+AutoSection:NewToggle("Auto Farm Demon Slayer", " ", function(state)
+    if state then
+        getgenv().autoClick = true
+        wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-19, 3, 5)
+        wait(0.1)
+        getgenv().autoDS = true
+        spawn(function()
+            while autoDS do task.wait()
+                local teleport_table = {
+                    location1 = Vector3.new(9566, 3, 14) -- location
+                }
+                
+                local tween_s = game:GetService('TweenService')
+                local tweeninfo = TweenInfo.new(0.3, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+                
+                local lp =  game.Players.LocalPlayer
+                
+                function bypass_teleport(v)
+                    if lp.Character and   
+                    lp.Character:FindFirstChild('HumanoidRootPart') then    
+                
+                        local cf = CFrame.new(v)
+                        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+                
+                         a:Play()
+                         a.Completed:Wait()
+                         wait(0.1)
+                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-17, 3, 7)
+                    end
+                end 
+                
+                bypass_teleport(teleport_table.location1)
+            end
+        end)
+    else
+        getgenv().autoClick = false
+        getgenv().autoDS = false
+    end
+end)
+
+AutoSection:NewToggle("Auto Farm One Piece", " ", function(state)
+    if state then
+        getgenv().autoClick = true
+        wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15, 3, 344)
+        wait(0.1)
+        getgenv().autoOP = true
+        spawn(function()
+            while autoOP do task.wait()
+                local teleport_table = {
+                    location1 = Vector3.new(9608, 3, 340) -- location
+                }
+                
+                local tween_s = game:GetService('TweenService')
+                local tweeninfo = TweenInfo.new(0.3, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+                
+                local lp =  game.Players.LocalPlayer
+                
+                function bypass_teleport(v)
+                    if lp.Character and   
+                    lp.Character:FindFirstChild('HumanoidRootPart') then    
+                
+                        local cf = CFrame.new(v)
+                        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+                
+                         a:Play()
+                         a.Completed:Wait()
+                         wait(0.1)
+                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15, 3, 344)
+                    end
+                end
+                
+                bypass_teleport(teleport_table.location1)
+            end
+        end)
+    else
+        getgenv().autoClick = false
+        getgenv().autoOP = false
+    end
+end)
+
+AutoSection:NewToggle("Auto Farm DBZ", " ", function(state)
+    if state then
+        getgenv().autoClick = true
+        wait(0.1)
+       getgenv().autoDBZ = true
+       spawn(function()
+        while autoDBZ do task.wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-27, 4, 672)
+        wait(0.1)
+        local teleport_table = {
+            location1 = Vector3.new(9544, 3, 673) -- location
+        }
+        
+        local tween_s = game:GetService('TweenService')
+        local tweeninfo = TweenInfo.new(2, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+        
+        local lp =  game.Players.LocalPlayer
+        
+        function bypass_teleport(v)
+            if lp.Character and   
+            lp.Character:FindFirstChild('HumanoidRootPart') then    
+        
+                local cf = CFrame.new(v)
+                local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+        
+                 a:Play()
+                 a.Completed:Wait()
+                 wait(1.5)
+                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-27, 4, 672)
+            end
+        end
+        
+        bypass_teleport(teleport_table.location1)
+    end
+
+end)
+    else
+       getgenv().autoClick = false
+        getgenv().autoDBZ = false
+    end
+end)
+
+AutoSection:NewToggle("Auto Farm AOT", " ", function(state)
+    if state then
+        getgenv().autoAOT = true
+        spawn(function()
+            while autoAOT do task.wait()
+        getgenv().autoClick = true
+        wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-17, 4, 1011)
+        wait(0.1)
+        local teleport_table = {
+            location1 = Vector3.new(9529, 3, 1016) -- location
+        }
+        
+        local tween_s = game:GetService('TweenService')
+        local tweeninfo = TweenInfo.new(4, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+        
+        local lp =  game.Players.LocalPlayer
+        
+        function bypass_teleport(v)
+            if lp.Character and   
+            lp.Character:FindFirstChild('HumanoidRootPart') then    
+        
+                local cf = CFrame.new(v)
+                local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+        
+                 a:Play()
+                 a.Completed:Wait()
+                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-17, 4, 1011)
+            end
+        end 
+        
+        bypass_teleport(teleport_table.location1)
+    end
+
+end)
+    else
+        getgenv().autoAOT = false
+    end
+end)
+
+-- auto farm end here
+-- farm tab end
+
+
+-- summon tab start
+local SummonTab = Window:NewTab("Summon")
+
+local SummonSection = SummonTab:NewSection("Eggs | Click 3 dots next to each toggle to see prices.")
+SummonSection:NewToggle("Auto Summon Naruto (Normal)", "Cost 60 Coins Each", function(state)
+    if state then
+        getgenv().autoNaruto1 = true
+        spawn(function()
+            while autoNaruto1 do task.wait(0.2)
+                -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = 1,
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+end
+end)
+    else
+        getgenv().autoNaruto1 = false
+    end
+end)
+
+SummonSection:NewToggle("Auto Summon Naruto (Advanced)", "Cost 600 Coins Each", function(state)
+    if state then
+        getgenv().autoNaruto2 = true
+        spawn(function()
+            while autoNaruto2 do task.wait(0.5)
+        local args = {
+    [1] = 2,
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+
+            end
+        end)
+            
+    else
+        getgenv().autoNaruto2 = false
+    end
+end)
+
+SummonSection:NewToggle("Auto Summon Demon Slayer (Normal)", "2k Coins Each", function(state)
+    if state then
+        getgenv().autoDS1 = true
+        spawn(function()
+            while autoDS1 do task.wait()
+                -- naruto advanced
+local args = {
+    [1] = 3,
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+end
+end)
+    else
+        getgenv().autoDS1 = false
+    end
+end)
+
+SummonSection:NewToggle("Auto Summon Demon Slayer (Advanced)", "26k Coins Each", function(state)
+    if state then
+        getgenv().autoDS2 = true
+        spawn(function()
+            while autoDS2 do task.wait()
+                -- naruto advanced
+local args = {
+    [1] = 4,
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+end
+end)
+    else
+        getgenv().autoDS2 = false
+    end
+end)
+
+SummonSection:NewToggle("Auto Summon One Piece (Normal)", "330k Coins Each", function(state)
+    if state then
+        getgenv().autoOP1 = true
+        spawn(function()
+            while autoOP1 do task.wait()
+local args = {
+    [1] = 5,
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+end
+end)
+    else
+       getgenv().autoOP1 = false
+    end
+end)
+
+SummonSection:NewToggle("Auto Summon One Piece (Advanced)", "2.40M Coins Each", function(state)
+    if state then
+        getgenv().autoOP2 = true
+        spawn(function()
+            while autoOP2 do task.wait()
+local args = {
+    [1] = 6,
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+end
+end)
+    else
+       getgenv().autoOP2 = false
+    end
+end)
+
+SummonSection:NewToggle("Auto Summon DBZ (Normal)", "73M Coins Each", function(state)
+    if state then
+        getgenv().DBZ1 = true
+        spawn(function()
+            while DBZ1 do task.wait()
+local args = {
+    [1] = 7,
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+end
+end)
+    else
+        getgenv().DBZ1 = false
+    end
+end)
+
+SummonSection:NewToggle("Auto Summon DBZ (Advanced)", "370M Coins Each", function(state)
+    if state then
+        getgenv().DBZ2 = true
+        spawn(function()
+            while DBZ2 do task.wait()
+                local args = {
+                    [1] = 8,
+                    [2] = 1
+                }
+                
+                game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+end
+end)
+    else
+        getgenv().DBZ2 = false
+    end
+end)
+
+SummonSection:NewToggle("Auto Summon AOT (Normal)", "7.80B Coins Each", function(state)
+    if state then
+        getgenv().AOT1 = true
+        spawn(function()
+            while AOT1 do task.wait()
+                local args = {
+                    [1] = 9,
+                    [2] = 1
+                }
+                
+                game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+            end
+
+        end)
+    else
+        getgenv().AOT1 = false
+    end
+end)
+
+SummonSection:NewToggle("Auto Summon AOT (Advanced)", "360B Coins Each", function(state)
+    if state then
+        getgenv().AOT2 = true
+        spawn(function()
+            while AOT2 do task.wait()
+                local args = {
+                    [1] = 10,
+                    [2] = 1
+                }
+                
+                game:GetService("ReplicatedStorage").Tool.DrawUp.Msg.DrawHero:InvokeServer(unpack(args))
+            end
+
+        end)
+    else
+        getgenv().AOT2 = false
+    end
+end)
+
+--summon end
+
+-- local player start
+
+local LocalTab = Window:NewTab("Local Player")
+
+local LocalSection = LocalTab:NewSection("Player")
+
+LocalSection:NewSlider("WalkSpeed", " ", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+   getgenv().walkSpeed = true
+   spawn(function()
+    while walkSpeed do task.wait()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end
+end)
+end)
+
+LocalSection:NewToggle("Auto Equip Best Units", "Automatically equip best fighters.", function(state)
+    if state then
+        getgenv().autoBest = true
+        spawn(function()
+            while autoBest do task.wait(0.5)
+game:GetService("ReplicatedStorage").ServerMsg.WearBestPet:InvokeServer()
+            end
+        end)
+    else
+        getgenv().autoBest = false
+    end
+end)
+
+local TeleportSection = LocalTab:NewSection("Teleports")
+
+TeleportSection:NewButton("Teleport to Naruto", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-90, 3, -325)
+end)
+
+TeleportSection:NewButton("Teleport to Demon Slayer", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-90, 3, 9)
+end)
+
+TeleportSection:NewButton("Teleport to One Piece", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-63, 3, 348)
+end)
+TeleportSection:NewButton("Teleport to DBZ", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-66, 4, 675)
+end)
+TeleportSection:NewButton("Teleport to AOT", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-91, 4, 1011)
+end)
+local CoinTab = Window:NewTab("Coin Farm")
+
+local CoinSection = CoinTab:NewSection("Auto Coin Farm | Better units = faster farm")
+
+CoinSection:NewToggle("Naruto Coin Farm", "Enable if on Naruto World", function(state)
+    if state then
+        getgenv().NarutoCoin = true
+        spawn(function()
+            while NarutoCoin do task.wait()
+                getgenv().autoClick = true
+                wait(0.1)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18, 3, -333)
+                wait(0.1)
+                local teleport_table = {
+                    location1 = Vector3.new(1439, 3, -335) -- location
+                }
+                
+                local tween_s = game:GetService('TweenService')
+                local tweeninfo = TweenInfo.new(1.25, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+                
+                local lp =  game.Players.LocalPlayer
+                
+                function bypass_teleport(v)
+                    if lp.Character and   
+                    lp.Character:FindFirstChild('HumanoidRootPart') then    
+                
+                        local cf = CFrame.new(v)
+                        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+                
+                         a:Play()
+                         a.Completed:Wait(1)
+                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18, 3, -333)
+                    end
+                end 
+                
+                bypass_teleport(teleport_table.location1)
+            end
+
+        end)
+    else
+        getgenv().NarutoCoin = false
+    end
+end)
+
+CoinSection:NewToggle("Demon Slayer Coin Farm", "Enable if on DS World", function(state)
+    if state then
+       getgenv().DSCoin = true
+       spawn(function()
+        while DSCoin do task.wait()
+            getgenv().autoClick = true
+            wait(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16, 3, 5)
+            wait(0.1)
+            local teleport_table = {
+                location1 = Vector3.new(1443, 3, 5) -- location
+            }
+            
+            local tween_s = game:GetService('TweenService')
+            local tweeninfo = TweenInfo.new(1.25, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+            
+            local lp =  game.Players.LocalPlayer
+            
+            function bypass_teleport(v)
+                if lp.Character and   
+                lp.Character:FindFirstChild('HumanoidRootPart') then    
+            
+                    local cf = CFrame.new(v)
+                    local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+            
+                     a:Play()
+                     a.Completed:Wait(1)
+                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16, 3, 5)
+                end
+            end 
+            
+            bypass_teleport(teleport_table.location1)
+        end
+
+    end)
+    else
+        getgenv().DSCoin = false
+    end
+end)
+
+CoinSection:NewToggle("One Piece Coin Farm", "Enable if on OP World", function(state)
+    if state then
+        getgenv().OPCoin = true
+        spawn(function()
+            while OPCoin do task.wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-19, 3, 346)
+                wait(0.1)
+                local teleport_table = {
+                    location1 = Vector3.new(1449, 3, 346) -- location
+                }
+                
+                local tween_s = game:GetService('TweenService')
+                local tweeninfo = TweenInfo.new(1, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+                
+                local lp =  game.Players.LocalPlayer
+                
+                function bypass_teleport(v)
+                    if lp.Character and   
+                    lp.Character:FindFirstChild('HumanoidRootPart') then    
+                
+                        local cf = CFrame.new(v)
+                        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+                
+                         a:Play()
+                         a.Completed:Wait(1)
+                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-19, 3, 346)
+                    end
+                end 
+                
+                bypass_teleport(teleport_table.location1)
+            end
+
+        end)
+    else
+        getgenv().OPCoin = false
+    end
+end)
+
+CoinSection:NewToggle("DBZ Coin Farm", "Enable if on DBZ World", function(state)
+    if state then
+        getgenv().DBZCoin = true
+        spawn(function()
+            while DBZCoin do task.wait()
+               getgenv().autoClick = true
+               wait(0.1)
+               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11, 4, 675)
+               wait(0.1)
+                local teleport_table = {
+                    location1 = Vector3.new(1446, 3, 674) -- location
+                }
+                
+                local tween_s = game:GetService('TweenService')
+                local tweeninfo = TweenInfo.new(1.25, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+                
+                local lp =  game.Players.LocalPlayer
+                
+                function bypass_teleport(v)
+                    if lp.Character and   
+                    lp.Character:FindFirstChild('HumanoidRootPart') then    
+                
+                        local cf = CFrame.new(v)
+                        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+                
+                         a:Play()
+                         a.Completed:Wait()
+                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11, 4, 675)
+                    end
+                end 
+                
+                bypass_teleport(teleport_table.location1)
+            end
+
+        end)
+    else
+        getgenv().DBZCoin = false
+    end
+end)
+
+CoinSection:NewToggle("AOT Coin Farm", "Enable if on AOT World", function(state)
+    if state then
+        getgenv().AOTCoin = true
+        spawn(function()
+            while AOTCoin do task.wait()
+                getgenv().autoClick = true
+                wait(0.1)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11, 4, 1009)
+                wait(0.1)
+                local teleport_table = {
+                    location1 = Vector3.new(1447, 3, 1008) -- location
+                }
+                
+                local tween_s = game:GetService('TweenService')
+                local tweeninfo = TweenInfo.new(1.25, Enum.EasingStyle.Linear) -- replace 1 with how many secs it takes to get there
+                
+                local lp =  game.Players.LocalPlayer
+                
+                function bypass_teleport(v)
+                    if lp.Character and   
+                    lp.Character:FindFirstChild('HumanoidRootPart') then    
+                
+                        local cf = CFrame.new(v)
+                        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo,{CFrame=cf})
+                
+                         a:Play()
+                         a.Completed:Wait(1)
+                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11, 4, 1009)
+                    end
+                end 
+                
+                bypass_teleport(teleport_table.location1)
+            end
+            end)
+    else
+        getgenv().AOTCoin = false
+    end
+end)
